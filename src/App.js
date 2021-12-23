@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import Multiselect from "multiselect-react-dropdown";
+import { useState } from "react";
+import "./App.css";
 
 function App() {
+  const data = [
+    { country: "India", id: 1 },
+    { country: "America", id: 2 },
+    { country: "Europe", id: 3 },
+    { country: "Germany", id: 4 },
+    { country: "Canada", id: 5 },
+    { country: "Austrila", id: 6 },
+    { country: "Italy", id: 7 },
+    { country: "Russia", id: 8 }
+  ];
+  const [options] = useState(data);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="dd">
+        <h3>Multiselect</h3>
+        <Multiselect options={options} displayValue="country" />
+      </div>
+      <div className="dd">
+        <h1>This is side container</h1>
+      </div>
     </div>
   );
 }
